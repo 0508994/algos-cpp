@@ -1,4 +1,5 @@
 #include "sorts/quicksort.h"
+#include "sorts/shuffle.h"
 
 namespace coursera {
 
@@ -28,6 +29,26 @@ std::size_t QuickSort::partition(std::vector<int>& a, std::size_t lo, std::size_
 
     // Return index of item now known to be in place.
     return j;
+}
+
+void QuickSort::sort(std::vector<int>& a) {
+    shuffle(a);
+    sort(a, 0, a.size() - 1);
+}
+
+std::vector<int> QuickSort::sort_copy(const std::vector<int>& a) {
+    std::vector<int> aux(a);
+    
+    sort(aux);
+
+    return aux;
+}
+
+void QuickSort::sort(std::vector<int>& a, std::size_t lo, std::size_t hi) {
+    if (hi <= lo) return;
+    const std::size_t P = partition(a, lo, hi);
+    sort(a, lo, P - 1);
+    sort(a, P + 1, hi);
 }
 
 }

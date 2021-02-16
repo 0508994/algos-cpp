@@ -1,2 +1,2 @@
 # algos-cpp
-My collection of algorithms.
+Use it or lose it!

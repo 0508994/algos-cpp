@@ -26,3 +26,15 @@ TEST(PartitionTest, ValidatePartitions) {
         ASSERT_GT(a[i], a[P]);
     }
 }
+
+TEST(QuicksortTest, TestSort) {
+    auto a = generate_sequence(5000);
+
+    auto to_sort = coursera::shuffle_copy(a);
+
+    ASSERT_NE(a, to_sort) << "REALLY NOW ??!";
+
+    coursera::QuickSort::sort(to_sort);
+
+    ASSERT_EQ(a, to_sort);
+}
