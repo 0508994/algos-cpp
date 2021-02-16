@@ -6,5 +6,3 @@
 #pragma once
 
 #include "gtest/gtest.h"
-
-#include "testdll/testdll.h"
