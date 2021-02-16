@@ -5,4 +5,8 @@
 
 #pragma once
 
+#include <vector>
+#include <algorithm>
+#include <numeric>
+
 #include "gtest/gtest.h"

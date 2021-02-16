@@ -21,9 +21,21 @@
     <ClInclude Include="include\testdll\testdll.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\sorts\quicksort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\sorts\shuffle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\testdll\testdll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sorts\quicksort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sorts\shuffle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
