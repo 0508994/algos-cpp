@@ -1,5 +1,6 @@
 #include "sorts/quicksort.h"
 #include "sorts/shuffle.h"
+#include <stdexcept>
 
 namespace coursera {
 
@@ -47,7 +48,15 @@ std::vector<int> QuickSort::sort_copy(const std::vector<int>& a) {
 void QuickSort::sort(std::vector<int>& a, std::size_t lo, std::size_t hi) {
     if (hi <= lo) return;
     const std::size_t P = partition(a, lo, hi);
-    sort(a, lo, P - 1);
+    
+    // They are using in 'int' in tutorial so they don't need to check this...
+    if (P != 0) {
+        sort(a, lo, P - 1);
+    } // or add hi == std::numeric_limits<std::size_t>::max() to a recursion exit condition which is kinda bad solution?
+      // or cast P to int64_t ??
+
+    
+
     sort(a, P + 1, hi);
 }
 

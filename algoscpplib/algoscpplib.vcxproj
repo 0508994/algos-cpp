@@ -170,12 +170,10 @@
     <ClInclude Include="include\common.h" />
     <ClInclude Include="include\sorts\quicksort.h" />
     <ClInclude Include="include\sorts\shuffle.h" />
-    <ClInclude Include="include\testdll\testdll.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\sorts\quicksort.cpp" />
     <ClCompile Include="src\sorts\shuffle.cpp" />
-    <ClCompile Include="src\testdll\testdll.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
