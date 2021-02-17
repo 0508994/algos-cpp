@@ -1,6 +1,5 @@
 #include "sorts/quicksort.h"
 #include "sorts/shuffle.h"
-#include <stdexcept>
 
 namespace coursera {
 
@@ -53,9 +52,7 @@ void QuickSort::sort(std::vector<int>& a, std::size_t lo, std::size_t hi) {
     if (P != 0) {
         sort(a, lo, P - 1);
     } // or add hi == std::numeric_limits<std::size_t>::max() to a recursion exit condition which is kinda bad solution?
-      // or cast P to int64_t ??
-
-    
+      // or cast P to int64_t before decrementing??
 
     sort(a, P + 1, hi);
 }
