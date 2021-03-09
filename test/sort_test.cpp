@@ -3,13 +3,13 @@
 #include "sorts/shuffle.h"
 #include "sorts/quicksort.h"
 
-TEST(ShuffleTest, DifferentThenOriginal) {
+TEST(Sorts, ShuffleTestDifferentThenOriginal) {
     auto a = generate_sequence(10000);
 
     ASSERT_NE(coursera::shuffle_copy(a), a) << "SRSLY !?!";
 }
 
-TEST(PartitionTest, ValidatePartitions) {
+TEST(Sorts, PartitionTestValidatePartitions) {
     auto a = generate_sequence(1000);
 
     coursera::shuffle(a);
@@ -27,7 +27,7 @@ TEST(PartitionTest, ValidatePartitions) {
     }
 }
 
-TEST(QuicksortTest, TestSort) {
+TEST(Sorts, QuickSort) {
     auto a = generate_sequence(5000);
 
     auto to_sort = coursera::shuffle_copy(a);
@@ -37,4 +37,13 @@ TEST(QuicksortTest, TestSort) {
     coursera::QuickSort::sort(to_sort);
 
     ASSERT_EQ(a, to_sort);
+}
+
+TEST(Sorts, QuickSelect) {
+    auto a = generate_sequence(100);
+    
+    ASSERT_EQ(coursera::QuickSort::select(a, 1), 1);
+    ASSERT_EQ(coursera::QuickSort::select(a, 10), 10);
+    ASSERT_EQ(coursera::QuickSort::select(a, 65), 65);
+    ASSERT_EQ(coursera::QuickSort::select(a, 99), 99);
 }

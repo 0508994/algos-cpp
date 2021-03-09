@@ -44,6 +44,27 @@ std::vector<int> QuickSort::sort_copy(const std::vector<int>& a) {
     return aux;
 }
 
+int QuickSort::select(std::vector<int>& a, std::size_t k) {
+    shuffle(a);
+    std::size_t lo = 0;
+    std::size_t hi = a.size() - 1;
+    while (hi > lo) {
+        const std::size_t P = partition(a, lo, hi);
+        if (P < k)  {
+            lo = P + 1;
+        } else if (P > k && P > 0) {
+            hi = P - 1;
+        } else {
+            return a[k];
+        }
+    }
+}
+
+int QuickSort::select_copy(const std::vector<int>& a, std::size_t k) {
+    std::vector<int> aux(a);
+    return select(aux, k);
+}
+
 void QuickSort::sort(std::vector<int>& a, std::size_t lo, std::size_t hi) {
     if (hi <= lo) return;
     const std::size_t P = partition(a, lo, hi);
