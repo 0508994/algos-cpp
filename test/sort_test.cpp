@@ -41,9 +41,19 @@ TEST(Sorts, QuickSort) {
 
 TEST(Sorts, QuickSelect) {
     auto a = generate_sequence(100);
-    
+
     ASSERT_EQ(coursera::QuickSort::select(a, 1), 1);
     ASSERT_EQ(coursera::QuickSort::select(a, 10), 10);
     ASSERT_EQ(coursera::QuickSort::select(a, 65), 65);
     ASSERT_EQ(coursera::QuickSort::select(a, 99), 99);
+}
+
+TEST(Sorts, DijsktraThreeWayPartitonQuickSort) {
+    std::vector<int> a{ 1, 1, 1, 1, 1, 3, 3, 3, 3, 5, 6, 7, 7, 7, 7, 8, 8, 9, 10 };
+    auto to_sort = coursera::shuffle_copy(a);
+
+    ASSERT_NE(a, to_sort) << "REALLY NOW ??!";
+
+    coursera::QuickSort::sort_dijkstra_three_way(to_sort);
+    ASSERT_EQ(to_sort, a);
 }
