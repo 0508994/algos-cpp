@@ -24,9 +24,7 @@ void shuffle(std::vector<int>& a) {
 
 std::vector<int> shuffle_copy(const std::vector<int>& a) {
     std::vector<int> aux(a);
-
     shuffle(aux);
-
     return aux;
 }
 
